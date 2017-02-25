@@ -1,6 +1,6 @@
-Brunch with Brunch
+Morris Charts
 ==================
 
-This is as minimal of a project as possible with brunch. It includes only
-javascript, css, and optimization plugins. The rest is left up to you.
-
+1. launch branch `brunch watch -s`,
+2. Open browser,
+3. Paste this Link `http://localhost:3333/` into the browser address bar.
