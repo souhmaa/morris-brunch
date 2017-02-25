@@ -26,6 +26,18 @@ module.exports = {
 
   plugins: {
     babel: { presets: ['es2015'] },
+    jshint: {
+      pattern: /^app[\\\/].*\.js$/,
+      options: {
+        bitwise: true,
+        esversion: 6,
+        curly: true
+      },
+      globals: {
+        jQuery: true
+      },
+      warnOnly: true
+    }
   },
 
   npm: {

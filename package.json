@@ -1,8 +1,8 @@
 {
-  "author": "Your Name",
-  "name": "package-name",
-  "description": "Package description",
-  "version": "0.0.0",
+  "author": "Souheil MAAALOUI",
+  "name": "brunch-charts",
+  "description": "Hello world",
+  "version": "0.0.1",
   "homepage": "",
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "css-brunch": ">= 1.0 < 1.9",
     "javascript-brunch": ">= 1.0 < 1.9",
     "jquery": "^3.1.1",
+    "jshint-brunch": "^2.0.0",
     "morris-js-module": "^1.2.1",
     "raphael": "^2.2.7",
     "uglify-js-brunch": ">= 1.0 < 1.9",

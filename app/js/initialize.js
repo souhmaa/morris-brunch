@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', () => {
-  require('js/app').start()
+  require('js/app').start();
 });

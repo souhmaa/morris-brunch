@@ -10,7 +10,7 @@
   var morrisModule = require('morris-js-module');
   var Morris = morrisModule.call(this, window.jQuery);
 
-  const app = {}
+  const app = {};
 
   function init() {
     area();
@@ -87,9 +87,9 @@
     });
 
     chart.options.labels.forEach(function (label, i) {
-      var legendItem = $('<b><span></span></b><br/>').text(label).css('color', chart.options.lineColors[i])
-      $('#legend').append(legendItem)
-    })
+      var legendItem = $('<b><span></span></b><br/>').text(label).css('color', chart.options.lineColors[i]);
+      $('#legend').append(legendItem);
+    });
   }
 
   function donut() {
@@ -101,7 +101,7 @@
         { value: 10, label: 'baz' },
         { value: 5, label: 'A really really long label' }
       ],
-      formatter: function (x) { return x + "%" }
+      formatter: function (x) { return x + "%"; }
     }).on('click', function (i, row) {
       console.log(i, row);
     });
@@ -126,8 +126,8 @@
 
   app.start = function () {
     init();
-  }
+  };
 
-  module.exports = app
+  module.exports = app;
 
 })();
