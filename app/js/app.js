@@ -5,7 +5,6 @@
   const $ = require('jquery');
   window.jQuery = $;
   require('bootstrap');
-  const _ = require('underscore');
 
   var morrisModule = require('morris-js-module');
   var Morris = morrisModule.call(this, window.jQuery);
@@ -21,46 +20,48 @@
   }
 
   function nonContinuous() {
-    var day_data = [
-      { "period": "2012-10-01", "licensed": 3407 },
-      { "period": "2012-09-30", "sorned": 0 },
-      { "period": "2012-09-29", "sorned": 618 },
-      { "period": "2012-09-20", "licensed": 3246, "sorned": 661 },
-      { "period": "2012-09-19", "licensed": 3257, "sorned": null },
-      { "period": "2012-09-18", "licensed": 3248, "other": 1000 },
-      { "period": "2012-09-17", "sorned": 0 },
-      { "period": "2012-09-16", "sorned": 0 },
-      { "period": "2012-09-15", "licensed": 3201, "sorned": 656 },
-      { "period": "2012-09-10", "licensed": 3215 }
+    var dayData = [
+      { 'period': '2012-10-01', 'licensed': 3407 },
+      { 'period': '2012-09-30', 'sorned': 0 },
+      { 'period': '2012-09-29', 'sorned': 618 },
+      { 'period': '2012-09-20', 'licensed': 3246, 'sorned': 661 },
+      { 'period': '2012-09-19', 'licensed': 3257, 'sorned': null },
+      { 'period': '2012-09-18', 'licensed': 3248, 'other': 1000 },
+      { 'period': '2012-09-17', 'sorned': 0 },
+      { 'period': '2012-09-16', 'sorned': 0 },
+      { 'period': '2012-09-15', 'licensed': 3201, 'sorned': 656 },
+      { 'period': '2012-09-10', 'licensed': 3215 }
     ];
     Morris.Line({
       element: 'nonContinous',
-      data: day_data,
+      data: dayData,
       xkey: 'period',
       ykeys: ['licensed', 'sorned', 'other'],
       labels: ['Licensed', 'SORN', 'Other'],
       /* custom label formatting with `xLabelFormat` */
-      xLabelFormat: function (d) { return (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear(); },
+      xLabelFormat: function (d) {
+        return (d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear();
+      },
       /* setting `xLabels` is recommended when using xLabelFormat */
       xLabels: 'day'
     });
   }
 
   function line() {
-    var neg_data = [
-      { "period": "2011-08-12", "a": 100 },
-      { "period": "2011-03-03", "a": 75 },
-      { "period": "2010-08-08", "a": 50 },
-      { "period": "2010-05-10", "a": 25 },
-      { "period": "2010-03-14", "a": 0 },
-      { "period": "2010-01-10", "a": -25 },
-      { "period": "2009-12-10", "a": -50 },
-      { "period": "2009-10-07", "a": -75 },
-      { "period": "2009-09-25", "a": -100 }
+    var negData = [
+      { 'period': '2011-08-12', 'a': 100 },
+      { 'period': '2011-03-03', 'a': 75 },
+      { 'period': '2010-08-08', 'a': 50 },
+      { 'period': '2010-05-10', 'a': 25 },
+      { 'period': '2010-03-14', 'a': 0 },
+      { 'period': '2010-01-10', 'a': -25 },
+      { 'period': '2009-12-10', 'a': -50 },
+      { 'period': '2009-10-07', 'a': -75 },
+      { 'period': '2009-09-25', 'a': -100 }
     ];
     Morris.Line({
       element: 'line',
-      data: neg_data,
+      data: negData,
       xkey: 'period',
       ykeys: ['a'],
       labels: ['Series A'],
@@ -87,7 +88,9 @@
     });
 
     chart.options.labels.forEach(function (label, i) {
-      var legendItem = $('<b><span></span></b><br/>').text(label).css('color', chart.options.lineColors[i]);
+      var legendItem = $('<b><span></span></b><br/>')
+        .text(label)
+        .css('color', chart.options.lineColors[i]);
       $('#legend').append(legendItem);
     });
   }
@@ -101,13 +104,18 @@
         { value: 10, label: 'baz' },
         { value: 5, label: 'A really really long label' }
       ],
-      formatter: function (x) { return x + "%"; }
+      formatter: function (x) { return x + '%'; }
     }).on('click', function (i, row) {
       console.log(i, row);
     });
   }
 
   function bar() {
+    if (true) {
+      console.log('test');
+    }
+
+
     Morris.Bar({
       element: 'bar',
       data: [

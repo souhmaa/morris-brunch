@@ -29,9 +29,14 @@ module.exports = {
     jshint: {
       pattern: /^app[\\\/].*\.js$/,
       options: {
+        maxerr: 0,
+        camelcase: true,
         bitwise: true,
         esversion: 6,
-        curly: true
+        curly: true,
+        unused: true,
+        maxlen: 80,
+        quotmark: 'single'
       },
       globals: {
         jQuery: true
